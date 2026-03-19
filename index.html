@@ -444,6 +444,159 @@
         evt.currentTarget.classList.add("active");
     }
 </script>
+<!-- История матчей сверху -->
+<div class="match-history-stripe">
+    <div class="match-history-container">
+        <!-- Пример одного матча (Победа) -->
+        <div class="match-card win">
+            <span class="match-status">WIN</span>
+            <img src="https://via.placeholder.com/20" alt="logo" class="opp-logo">
+            <span class="opponent">NAVI</span>
+            <span class="score">16:10</span>
+        </div>
+
+        <!-- Пример матча (Поражение) -->
+        <div class="match-card loss">
+            <span class="match-status">LOSS</span>
+            <img src="https://via.placeholder.com/20" alt="logo" class="opp-logo">
+            <span class="opponent">Liquid</span>
+            <span class="score">12:16</span>
+        </div>
+
+        <!-- Еще матчи -->
+        <div class="match-card win">
+            <span class="match-status">WIN</span>
+            <img src="https://via.placeholder.com/20" alt="logo" class="opp-logo">
+            <span class="opponent">Vitality</span>
+            <span class="score">2:1</span>
+        </div>
+
+        <div class="match-card win">
+            <span class="match-status">WIN</span>
+            <img src="https://via.placeholder.com/20" alt="logo" class="opp-logo">
+            <span class="opponent">G2</span>
+            <span class="score">16:5</span>
+        </div>
+    </div>
+</div>
+
+<!-- Кнопка вступления в команду (фиксированная сбоку или снизу) -->
+<a href="#join-form" class="join-team-btn">
+    <span class="btn-icon">+</span>
+    СТАТЬ ЧАСТЬЮ КОМАНДЫ
+</a>
+/* Общие настройки для шрифтов, если еще нет */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0b0e11;
+    color: white;
+}
+
+/* --- СТИЛИ ИСТОРИИ МАТЧЕЙ --- */
+.match-history-stripe {
+    background: #14171c;
+    border-bottom: 2px solid #2d323a;
+    width: 100%;
+    overflow-x: auto; /* Позволяет скроллить, если матчей много */
+    white-space: nowrap;
+}
+
+.match-history-container {
+    display: flex;
+    padding: 10px 20px;
+    gap: 15px;
+    align-items: center;
+}
+
+.match-card {
+    display: flex;
+    align-items: center;
+    background: #1c2127;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    border-left: 4px solid #555;
+}
+
+/* Цвета для побед и поражений */
+.match-card.win { border-left-color: #00ff88; }
+.match-card.loss { border-left-color: #ff4655; }
+
+.match-status {
+    margin-right: 10px;
+    font-size: 10px;
+}
+
+.win .match-status { color: #00ff88; }
+.loss .match-status { color: #ff4655; }
+
+.opp-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+.opponent {
+    margin-right: 10px;
+    color: #ccc;
+}
+
+.score {
+    color: #fff;
+    background: #2d323a;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* --- СТИЛИ КНОПКИ ЗАЯВКИ --- */
+.join-team-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(45deg, #ff4655, #ff7681);
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(255, 70, 85, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    letter-spacing: 1px;
+}
+
+.join-team-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(255, 70, 85, 0.5);
+    background: linear-gradient(45deg, #ff7681, #ff4655);
+}
+
+.btn-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 600px) {
+    .join-team-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 18px;
+        font-size: 12px;
+    }
+}
 
 </body>
 </html>

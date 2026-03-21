@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>9ezEsports - Киберспортивная команда по CS2</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #121212;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ff3c00;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #ff3c00;
+        }
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            color: #ff3c00;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 2rem;
+        }
+        ul.roster {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        ul.roster li {
+            background: #222;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            width: 180px;
+            box-shadow: 0 0 10px #ff3c00a0;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        ul.roster li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff3c00;
+        }
+        ul.roster li strong {
+            display: block;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: #ff3c00;
+        }
+        ul.roster li span {
+            font-size: 1rem;
+            color: #ccc;
+        }
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #333;
+        }
+        a {
+            color: #ff3c00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>9ezEsports</h1>
+        <p>Киберспортивная команда по CS2</p>
+    </header>
 
+    <main>
+        <section id="roster">
+            <h2>Состав команды</h2>
+            <ul class="roster">
+                <li>
+                    <strong>xinto</strong>
+                    <span>Entry Fragger</span>
+                </li>
+                <li>
+                    <strong>ba7ka</strong>
+                    <span>IGL (In-Game Leader)</span>
+                </li>
+                <li>
+                    <strong>mef0mu</strong>
+                    <span>Rifler</span>
+                </li>
+                <li>
+                    <strong>blitzn0n</strong>
+                    <span>Lurker</span>
+                </li>
+                <li>
+                    <strong>kaze</strong>
+                    <span>Sniper</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 9ezEsports &mdash; Все права защищены<br />
+        <a href="https://twitter.com/9ezEsports" target="_blank" rel="noopener noreferrer">Twitter</a> |
+        <a href="https://discord.gg/9ezEsports" target="_blank" rel="noopener noreferrer">Discord</a>
+    </footer>
+</body>
+</html>

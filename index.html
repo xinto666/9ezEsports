@@ -1,126 +1,139 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>9ezEsports - Киберспортивная команда по CS2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9ezEsports | Официальный сайт</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #121212;
-            color: #f0f0f0;
-            margin: 0;
-            padding: 0;
+            background-color: #050505;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
-        header {
-            background-color: #1f1f1f;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #ff3c00;
+        .font-cyber { font-family: 'Orbitron', sans-serif; }
+        
+        /* Анимация появления */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: #ff3c00;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
-        main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
+
+        /* Агрессивный градиент для текста */
+        .text-gradient {
+            background: linear-gradient(90deg, #ccff00, #57ffcd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        h2 {
-            color: #ff3c00;
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 2rem;
+
+        /* Эффект свечения для кнопок */
+        .btn-9ez {
+            position: relative;
+            background: #ccff00;
+            color: black;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: 0.3s;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
         }
-        ul.roster {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        ul.roster li {
-            background: #222;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 20px;
-            width: 180px;
-            box-shadow: 0 0 10px #ff3c00a0;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        ul.roster li:hover {
+        .btn-9ez:hover {
+            box-shadow: 0 0 20px #ccff00;
             transform: scale(1.05);
-            box-shadow: 0 0 15px #ff3c00;
-        }
-        ul.roster li strong {
-            display: block;
-            font-size: 1.4rem;
-            margin-bottom: 8px;
-            color: #ff3c00;
-        }
-        ul.roster li span {
-            font-size: 1rem;
-            color: #ccc;
-        }
-        footer {
-            margin-top: 60px;
-            padding: 20px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #777;
-            border-top: 1px solid #333;
-        }
-        a {
-            color: #ff3c00;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>9ezEsports</h1>
-        <p>Киберспортивная команда по CS2</p>
-    </header>
 
-    <main>
-        <section id="roster">
-            <h2>Состав команды</h2>
-            <ul class="roster">
-                <li>
-                    <strong>xinto</strong>
-                    <span>Entry Fragger</span>
-                </li>
-                <li>
-                    <strong>ba7ka</strong>
-                    <span>IGL (In-Game Leader)</span>
-                </li>
-                <li>
-                    <strong>mef0mu</strong>
-                    <span>Rifler</span>
-                </li>
-                <li>
-                    <strong>blitzn0n</strong>
-                    <span>Lurker</span>
-                </li>
-                <li>
-                    <strong>kaze</strong>
-                    <span>Sniper</span>
-                </li>
-            </ul>
-        </section>
-    </main>
+    <!-- Навигация -->
+    <nav class="flex justify-between items-center p-6 border-b border-white/10 backdrop-blur-md sticky top-0 z-50">
+        <div class="text-2xl font-cyber font-black tracking-tighter">9ez<span class="text-[#ccff00]">ESPORTS</span></div>
+        <div class="space-x-8 font-bold uppercase text-sm tracking-widest hidden md:flex">
+            <a href="#" class="hover:text-[#ccff00] transition">Состав</a>
+            <a href="#" class="hover:text-[#ccff00] transition">Матчи</a>
+            <a href="#" class="hover:text-[#ccff00] transition">Медиа</a>
+            <a href="#" class="hover:text-[#ccff00] transition">Магазин</a>
+        </div>
+        <button class="btn-9ez px-8 py-2">Магазин</button>
+    </nav>
 
-    <footer>
-        &copy; 2024 9ezEsports &mdash; Все права защищены<br />
-        <a href="https://twitter.com/9ezEsports" target="_blank" rel="noopener noreferrer">Twitter</a> |
-        <a href="https://discord.gg/9ezEsports" target="_blank" rel="noopener noreferrer">Discord</a>
-    </footer>
+    <!-- Hero Секция -->
+    <section class="h-[90vh] flex flex-col justify-center items-center text-center relative overflow-hidden">
+
+
+<!-- Задний фон с эффектом -->
+        <div class="absolute inset-0 bg-[url('https://создай-свой-фон-тут.jpg')] bg-cover bg-center opacity-20 grayscale"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+
+        <h1 class="reveal font-cyber text-6xl md:text-9xl font-black mb-4 tracking-tighter active">
+            GG <span class="text-gradient">9ez</span> WP
+        </h1>
+        <p class="reveal text-gray-400 text-lg md:text-2xl max-w-2xl active" style="transition-delay: 0.2s;">
+            Доминируем в CS2. Не просто играем, а создаем историю. 
+        </p>
+        
+        <div class="reveal mt-10 active" style="transition-delay: 0.4s;">
+            <button class="border-2 border-[#ccff00] text-[#ccff00] px-10 py-3 font-black uppercase tracking-widest hover:bg-[#ccff00] hover:text-black transition duration-300">
+                Смотреть игру
+            </button>
+        </div>
+    </section>
+
+    <!-- Секция игроков (Карточки) -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="font-cyber text-4xl mb-12 border-l-4 border-[#ccff00] pl-4">АКТИВНЫЙ РОСТЕР</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Карточка игрока -->
+            <div class="reveal bg-[#121212] border border-white/5 p-4 group cursor-pointer hover:border-[#ccff00]/50 transition">
+                <div class="h-80 bg-gray-800 mb-4 overflow-hidden relative">
+                    <img src="https://via.placeholder.com/400x600" alt="Player" class="grayscale group-hover:grayscale-0 transition duration-500 object-cover w-full h-full">
+                    <div class="absolute bottom-0 left-0 bg-[#ccff00] text-black px-4 py-1 font-black">AWP</div>
+                </div>
+                <h3 class="font-cyber text-2xl uppercase italic">PlayerName</h3>
+                <p class="text-gray-500 font-bold">Имя Фамилия</p>
+            </div>
+
+            <!-- Дубликаты для примера -->
+            <div class="reveal bg-[#121212] border border-white/5 p-4 group cursor-pointer hover:border-[#ccff00]/50 transition" style="transition-delay: 0.1s;">
+                <div class="h-80 bg-gray-800 mb-4 overflow-hidden relative">
+                    <img src="https://via.placeholder.com/400x600" alt="Player" class="grayscale group-hover:grayscale-0 transition duration-500 object-cover w-full h-full">
+                    <div class="absolute bottom-0 left-0 bg-[#ccff00] text-black px-4 py-1 font-black">IGL</div>
+                </div>
+                <h3 class="font-cyber text-2xl uppercase italic">Captain</h3>
+                <p class="text-gray-500 font-bold">Имя Фамилия</p>
+            </div>
+
+            <div class="reveal bg-[#121212] border border-white/5 p-4 group cursor-pointer hover:border-[#ccff00]/50 transition" style="transition-delay: 0.2s;">
+                <div class="h-80 bg-gray-800 mb-4 overflow-hidden relative">
+                    <img src="https://via.placeholder.com/400x600" alt="Player" class="grayscale group-hover:grayscale-0 transition duration-500 object-cover w-full h-full">
+                    <div class="absolute bottom-0 left-0 bg-[#ccff00] text-black px-4 py-1 font-black">ENTRY</div>
+                </div>
+                <h3 class="font-cyber text-2xl uppercase italic">Shooter</h3>
+                <p class="text-gray-500 font-bold">Имя Фамилия</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Простой скрипт для анимации появления при скролле
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

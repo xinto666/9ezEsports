@@ -1,0 +1,44 @@
+/* Контейнер для центровки и отступов */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Основной стиль логотипа */
+.team-logo {
+    width: 200px; /* Размер для ПК */
+    height: auto;
+    border-radius: 20px; /* Скругление углов как на картинке */
+    
+    /* Эффект свечения: красная и фиолетовая тени */
+    filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.6)) 
+            drop-shadow(0 0 30px rgba(139, 92, 246, 0.3));
+    
+    /* Анимация */
+    animation: floating 4s ease-in-out infinite;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Эффект при наведении (для ПК) */
+.team-logo:hover {
+    transform: scale(1.1) rotate(-2deg); /* Увеличение и наклон */
+    filter: drop-shadow(0 0 25px rgba(239, 68, 68, 0.8)) 
+            drop-shadow(0 0 45px rgba(139, 92, 246, 0.5));
+    cursor: pointer;
+}
+
+/* Адаптивность для мобильных телефонов */
+max-width: 768px {
+    .team-logo {
+        width: 140px; /* Уменьшаем размер на смартфонах */
+    }
+}
+
+/* Плавная анимация покачивания вверх-вниз */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
